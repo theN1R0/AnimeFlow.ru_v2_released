@@ -1,0 +1,397 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.profile-banner {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.profile-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column; /* Меняем направление flex на колонку */
+    gap: 10px;
+}
+
+
+.profile-btn {
+    background-color: rgba(66, 62, 62, 0.3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid white;
+    width: auto; /* Фиксированная ширина для всех кнопок */
+    text-align: center;
+    display: inline-block; /* Добавляем это, чтобы все элементы имели блочную модель */
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+}
+
+.profile-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    margin-top: -75px; /* Поднимаем блок с аватаром, чтобы он перекрывал баннер */
+    padding: 20px;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 5px solid #070720;
+    position: relative;
+    z-index: 2; /* Убедимся, что аватарка выше баннера */
+    margin-top: -150px; /* Поднимаем аватарку над баннером */
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-details {
+    font-size: 16px;
+    z-index: 1; /* Текст ниже аватара */
+    margin-top: 10px; /* Расстояние от ника до информации */
+    width: 70%; /* Расширяем область, чтобы текст помещался */
+}
+
+.profile-details h2 {
+    margin-bottom: 1px; /* Расстояние под ником */
+    margin-top: 30px; /* Увеличиваем расстояние над ником */
+    font-size: 28px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.profile-details .col-md-6 {
+    width: 33.33%; /* Для трех столбцов */
+    padding: 10px;
+}
+
+.profile-details p {
+    margin-bottom: 5px; /* Уменьшаем расстояние под ником */
+    margin: 3px 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-details strong {
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .profile-details .col-md-6 {
+        width: 100%;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center; /* Центрируем все элементы */
+    align-items: center;
+    background: #070720;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    position: relative;
+    border-top: 2px solid #dc3545;
+    width: 100%;
+}
+
+  .profile-content {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+  }
+
+  .profile-avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+  }
+
+  .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .profile-details h2 {
+      font-size: 28px;
+      color: white;
+      margin-bottom: 10px;
+  }
+
+  .profile-details p {
+      margin: 5px 0;
+      color: rgba(255, 255, 255, 0.7);
+  }
+
+  .profile-favorites-section {
+      margin-top: 50px;
+      margin-left: 70px; /* Добавляем отступ слева */
+  }
+
+  .favorite-anime {
+      width: 150px;
+      text-align: center;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease; /* Анимация увеличения и изменения цвета текста */
+  }
+
+  .favorite-anime img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease; /* Анимация увеличения картинки */
+  }
+
+  .favorite-anime p {
+      margin-top: 10px;
+      color: white;
+      font-size: 14px;
+      transition: color 0.3s ease; /* Анимация изменения цвета текста */
+  }
+
+  .favorite-anime:hover {
+      transform: scale(1.1); /* Увеличение карточки при наведении */
+  }
+
+  .favorite-anime:hover p {
+      color: #e53637; /* Цвет текста меняется на красный при наведении */
+  }
+
+  .profile-favorites-section h3 {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 20px;
+  }
+
+    .search-model {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .header__right .search-switch {
+        margin-right: 20px; /* Создаем отступ для иконки поиска */
+    }
+
+    .search-results {
+        position: absolute;
+        top: 500px;
+        width: 500px;
+        background-color: rgba(0, 0, 0, 0.9); /* Темный фон с прозрачностью */
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        display: none;
+    }
+
+    .search-results ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .search-results li {
+        padding: 10px; /* Внутренний отступ для каждого элемента */
+        font-size: 18px; /* Увеличиваем шрифт */
+        font-weight: bold; /* Жирный текст */
+        color: white; /* Цвет текста */
+        cursor: pointer; /* Курсор в виде руки при наведении */
+    }
+
+    .search-results li:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Подсветка при наведении */
+        border-radius: 8px;
+    }
+
+    .search-close-switch {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+    }
+
+.header {
+    display: flex;
+    align-items: center; /* Центрируем содержимое по вертикали */
+}
+
+.header__right {
+    display: flex;
+    align-items: center; /* Выравниваем элементы по центру */
+    justify-content: flex-start; /* Элементы располагаются слева */
+    height: 100%; /* Устанавливаем высоту, чтобы избежать смещения вверх */
+}
+
+.header__right a:last-child {
+    margin-left: -10px !important; /* Принудительно устанавливаем отступ */
+}
+
+.header__right img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Предотвращает сжатие аватарки */
+}
+
+    .header__right .icon_search {
+        margin-right: 0; /* Убираем лишний отступ у иконки поиска */
+    }
+
+
+/* Стили для заголовков категорий */
+.anime-category {
+    cursor: pointer;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.anime-category.active {
+    color: #ffffff;
+    border-bottom: 2px solid #FF6B6B;
+}
+
+.anime-category:hover{
+    color: #FF6B6B;
+    transition: color 0.3s ease; /* Анимация изменения цвета текста */
+}
+
+/* Стили для сетки аниме */
+.favorites-grid {
+    opacity: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    transition: opacity 0.5s ease-in-out;
+    justify-items: center;
+}
+
+.favorites-grid.hidden {
+    opacity: 0;
+    pointer-events: none; /* Отключаем клики во время скрытия */
+}
+
+.empty-message {
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 50px 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #1C1C3A;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    color: white;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #2A2A5A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #FF6B6B;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ff3d3d;
+}

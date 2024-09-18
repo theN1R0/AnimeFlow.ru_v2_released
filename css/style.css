@@ -1,0 +1,2269 @@
+/*----------------------------------------*/
+/*default CSS
+/*----------------------------------------*/
+
+html,
+body {
+	height: 100%;
+	font-family: "Mulish", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: #0b0c2a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	color: #111111;
+	font-weight: 400;
+	font-family: "Mulish", sans-serif;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	font-size: 15px;
+	font-family: "Mulish", sans-serif;
+	color: #3d3d3d;
+	font-weight: 400;
+	line-height: 25px;
+	margin: 0 0 15px 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+	color: #ffffff;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+/*---------------------
+  Helper CSS
+-----------------------*/
+
+.section-title {
+	margin-bottom: 30px;
+}
+
+.section-title h4,
+.section-title h5 {
+	color: #ffffff;
+	font-weight: 600;
+	line-height: 21px;
+	text-transform: uppercase;
+	padding-left: 20px;
+	position: relative;
+	font-family: "Oswald", sans-serif;
+}
+
+.section-title h4:after,
+.section-title h5:after {
+	position: absolute;
+	left: 0;
+	top: -6px;
+	height: 32px;
+	width: 4px;
+	background: #e53637;
+	content: "";
+}
+
+.set-bg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
+.spad {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+	color: #fff;
+}
+
+/* buttons */
+
+.primary-btn {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #ffffff;
+	letter-spacing: 2px;
+}
+
+.primary-btn span {
+	font-size: 18px;
+	margin-left: 5px;
+	position: relative;
+	top: 3px;
+}
+
+.site-btn {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	font-weight: 700;
+	border: none;
+	border-radius: 2px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px 30px;
+}
+
+
+.product__page__filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px; /* Минимальное расстояние между текстом и селектором */
+    white-space: nowrap; /* Запрещает перенос текста на новую строку */
+}
+
+/* Общий контейнер для фильтра */
+.product__sidebar__view {
+    background-color: #0a0a2b; /* Ваш темный фон */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок фильтра */
+.product__sidebar__view .section-title h5 {
+    font-size: 20px;
+    color: #f84464; /* Яркий цвет заголовка как на референсе */
+    border-bottom: 2px solid #dc3545;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-box {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+    border: 2px solid #ff5252;
+    margin-bottom: 0;
+    height: auto; /* Убедитесь, что высота автоматически подстраивается под контент */
+    display: flex;
+    flex-direction: column; /* Убедитесь, что элементы внутри располагаются по вертикали */
+    position: -webkit-sticky; /* Для Safari */
+    position: sticky;
+    top: 10px; /* Оставляем немного пространства сверху */
+    z-index: 2; /* Высокий z-index, чтобы фильтр всегда был сверху */
+}
+
+#ad-container-filter {
+    text-align: center;
+    margin-top: 20px;
+    z-index: 1; /* Убедимся, что рекламный блок находится ниже фильтра */
+}
+
+/* Ползунок для выбора года */
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter-section label {
+    font-weight: bold;
+    color: #fff; /* Цвет текста */
+}
+
+/* Стили для noUiSlider */
+#yearRangeSlider {
+    margin: 20px 0;
+    width: 295px;
+    height: 10px;
+    background: #2a2a59;
+    border-radius: 5px;
+    position: relative;
+	margin-top: 30px; /* Добавим небольшой отступ от надписи "Год" */
+}
+
+#yearRangeSlider .noUi-connect {
+    background: #f84464; /* Цвет полосы активного диапазона */
+}
+
+#yearRangeSlider .noUi-handle {
+    background: #ececec; /* Цвет ползунков */
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+}
+
+/* Стили для output годов */
+.filter-section output {
+    font-size: 14px;
+    color: #ffffff;
+    background: #f84464;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.filter-section select, .filter-section button {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 10px; /* Отступ сверху для воздуха */
+    background-color: rgb(255, 255, 255); /* Темный фон для списков */
+    color: rgb(0, 0, 0); /* Белый текст */
+    border: 1px solid #444; /* Легкая окантовка для четкости */
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Плавные изменения при наведении */
+}
+
+/* Выпадающие списки для жанров, типа и статуса */
+.select2-container--default .select2-selection--single {
+    background-color: #1a1a3b;
+    border: 1px solid #4e4e88;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px;
+    height: auto;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #ffffff;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #ffffff transparent transparent transparent;
+}
+/* Позиционирование значений года */
+.year-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.year-labels output {
+    font-size: 16px;
+    color: #ffffff; /* Цвет текста */
+    padding: 0 10px;
+}
+
+/* Уменьшение размера ползунков */
+.noUi-handle {
+    background: radial-gradient(circle, #ffffff, #ffffff);
+    border: none !important; /* Убираем любые границы */
+    box-shadow: none !important; /* Убираем любые тени */
+}
+
+/* Опускаем метки под слайдер */
+.slider-values {
+    position: relative;
+    bottom: -30px; /* Смещение значений вниз */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.noUi-connect {
+    background: #ff5065; /* Цвет линии между ползунками */
+}
+
+.noUi-horizontal .noUi-handle {
+    border-radius: 50%; /* Закругляем ползунки */
+}
+
+.noUi-tooltip {
+    background: #ffffff; /* Цвет подсказки */
+    color: #ffffff; /* Цвет текста в подсказке */
+    font-size: 12px;
+    border-radius: 3px;
+}
+/* Кнопка фильтров */
+#applyFilters {
+    width: 100%;
+    background-color: #f84464;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#applyFilters:hover {
+    background-color: #e43b58;
+}
+
+.product__page__filter p {
+    margin: 0; /* Убираем отступы для текста "Сортировать по:" */
+    white-space: nowrap; /* Принудительно оставляем текст в одну строку */
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#yearRange {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.product__page__filter select {
+    width: 100px; /* Фиксированная ширина, чтобы селектор не был слишком широким */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Добавляем скругление углов */
+    background-color: #fff;
+}
+
+/* Preloder */
+
+#preloder {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background: #000;
+}
+
+.loader {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -13px;
+	margin-left: -13px;
+	border-radius: 60px;
+	animation: loader 0.8s linear infinite;
+	-webkit-animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+@-webkit-keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+.spacial-controls {
+	position: fixed;
+	width: 111px;
+	height: 91px;
+	top: 0;
+	right: 0;
+	z-index: 999;
+}
+
+.spacial-controls .search-switch {
+	display: block;
+	height: 100%;
+	padding-top: 30px;
+	background: #323232;
+	text-align: center;
+	cursor: pointer;
+}
+
+.search-model {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: #000;
+	z-index: 99999;
+}
+
+.search-model-form {
+    position: absolute; /* Добавляем абсолютное позиционирование */
+    top: 15%; /* Уменьшите это значение, чтобы поднять поле выше */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+    padding: 0 15px;
+}
+
+
+.search-model-form input {
+	width: 500px;
+	font-size: 40px;
+	border: none;
+	border-bottom: 2px solid #333;
+	background: 0 0;
+	color: #999;
+}
+
+.search-close-switch {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 28px;
+	line-height: 28px;
+	top: 30px;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+/*---------------------
+  Header
+-----------------------*/
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Логотип слева, меню справа */
+    align-items: center; /* Выравнивание по вертикали */
+    background: #070720;
+    padding: 0 20px; /* Уменьши верхний и нижний отступы */
+	border-bottom: 2px solid #dc3545;
+}
+
+
+.header__logo {
+    padding: 0;
+    width: 80px; /* Задай фиксированную ширину */
+    height: 90px; /* Чтобы высота автоматически подстраивалась под ширину */
+}
+
+
+.header__logo a {
+	display: inline-block;
+}
+
+.header__menu {
+	margin-top: 20px; /* Увеличь отступ сверху для меню */
+	flex-grow: 1;
+	text-align: center;
+}
+
+.header__menu ul li {
+	list-style: none;
+	display: inline-block;
+	position: relative;
+	margin-right: 16px;
+}
+
+.header__menu ul li.active a {
+	background: #e53637;
+	color: #ffffff;
+}
+
+.header__menu ul li:hover a {
+	color: #ffffff;
+}
+
+.header__menu ul li:hover .dropdown {
+	top: 62px;
+	opacity: 1;
+	visibility: visible;
+}
+
+.header__menu ul li:hover .dropdown li a {
+	background: transparent;
+}
+
+.header__menu ul li:last-child {
+	margin-right: 0;
+}
+
+.header__menu ul li .dropdown {
+	position: absolute;
+	left: 0;
+	top: 82px;
+	width: 150px;
+	background: #ffffff;
+	text-align: left;
+	padding: 5px 0;
+	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.header__menu ul li .dropdown li {
+	display: block;
+	margin-right: 0;
+}
+
+.header__menu ul li .dropdown li a {
+	font-size: 14px;
+	color: #111111;
+	font-weight: 500;
+	padding: 5px 20px;
+}
+
+.header__menu ul li a {
+	font-size: 15px;
+	color: #b7b7b7;
+	display: block;
+	font-weight: 700;
+	-webkit-transition: all, 0.5s;
+	-o-transition: all, 0.5s;
+	transition: all, 0.5s;
+	padding: 10px 15px; /* Уменьши внутренние отступы меню */
+}
+
+.header__menu ul li a span {
+	position: relative;
+	font-size: 17px;
+	top: 2px;
+}
+
+.header__username {
+    margin-left: 2px; /* Уменьшаем отступ между иконкой профиля и именем пользователя */
+    font-size: 14px; 
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header__right a {
+	display: inline-block;
+	font-size: 18px;
+	color: #ffffff;
+	margin-right: 20px;
+}
+
+.header__right a:last-child {
+	margin-right: 0;
+}
+
+.slicknav_menu {
+	display: none;
+	background: #070720;
+}
+
+.nb__text h2 {
+    color: #ffffff; /* Делает текст белым */
+    text-align: center; /* Выровнять по центру */
+}
+
+.nb__text p {
+    text-align: center; /* Выровнять подзаголовок по центру */
+}
+/*---------------------
+  Hero
+-----------------------*/
+
+.hero {
+	padding-top: 50px;
+}
+
+.hero__items {
+	padding: 250px 0 42px 50px;
+	border-radius: 20px;
+	border: 2px solid #ff5252;
+}
+
+.hero__text {
+    position: relative; /* Относительное позиционирование для правильного отображения подложки */
+    padding: 20px 20px 20px 40px; /* Добавляем больший отступ слева */
+    color: white; /* Цвет текста */
+    z-index: 2; /* Убедитесь, что текст поверх подложки */
+}
+.hero__text::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -1000px; /* Двигаем подложку немного левее */
+    width: calc(100% + 1000px); /* Увеличиваем ширину подложки */
+    height: 1000px;
+    background-color: rgba(0, 0, 0, 0.6); /* Тёмная полупрозрачная подложка */
+    z-index: 1; /* Подложка будет под текстом */
+    border-radius: 10px; /* Если хотите добавить скругление */
+}
+
+.hero__text h2, .hero__text p, .hero__text a {
+    position: relative; /* Чтобы текст оставался над подложкой */
+    z-index: 2;
+}
+
+.hero__text .label {
+	font-size: 13px;
+	color: #e53637;
+	background: #ffffff;
+	padding: 5px 14px 3px;
+	display: inline-block;
+	position: relative;
+	top: -100px;
+	opacity: 0;
+	-webkit-transition: all, 0.2s;
+	-o-transition: all, 0.2s;
+	transition: all, 0.2s;
+	z-index: 2;
+	border-radius: 10px;
+}
+
+.hero__text h2 {
+	color: #ffffff;
+	font-size: 42px;
+	font-family: "Oswald", sans-serif;
+	font-weight: 700;
+	line-height: 52px;
+	margin-top: 35px;
+	margin-bottom: 8px;
+	position: relative;
+	top: -100px;
+	opacity: 0;
+	-webkit-transition: all, 0.4s;
+	-o-transition: all, 0.4s;
+	transition: all, 0.4s;
+}
+
+.hero__text p {
+	color: #ffffff;
+	font-size: 16px;
+	margin-bottom: 40px;
+	position: relative;
+	top: -100px;
+	opacity: 0;
+	-webkit-transition: all, 0.6s;
+	-o-transition: all, 0.6s;
+	transition: all, 0.6s;
+}
+
+.hero__text a {
+	position: relative;
+	top: -100px;
+	opacity: 0;
+	-webkit-transition: all, 0.8s;
+	-o-transition: all, 0.8s;
+	transition: all, 0.8s;
+}
+
+.hero__text a span {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 20px;
+	border-radius: 4px 0 0 4px;
+	margin-right: 1px;
+}
+
+.hero__text a i {
+	font-size: 20px;
+	display: inline-block;
+	background: #e53637;
+	padding: 11px 5px 16px 8px;
+	color: #ffffff;
+	border-radius: 0 4px 4px 0;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text .label {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text h2 {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text p {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text a {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-dots {
+    position: absolute;
+    left: 75%; /* Центрируем контейнер по горизонтали относительно его родителя */
+    bottom: 10px;
+    transform: translateX(-50%); /* Сдвигаем его обратно на половину его ширины для точного центрирования */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hero__slider.owl-carousel .owl-dots button {
+	height: 10px;
+	width: 10px;
+	background: #b7b7b7;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.hero__slider.owl-carousel .owl-dots button.active {
+	background: #e53637;
+}
+
+.hero__slider.owl-carousel .owl-dots button:last-child {
+	margin-right: 0;
+}
+
+.hero__slider.owl-carousel .owl-nav button {
+	font-size: 36px;
+	height: 66px;
+	width: 66px;
+	background: #0b0c2a;
+	line-height: 66px;
+	text-align: center;
+	color: #ffffff;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position: relative;
+	z-index: 1;
+	position: absolute;
+	left: -33px;
+	top: 50%;
+	margin-top: -47px;
+}
+
+.hero__slider.owl-carousel .owl-nav button.owl-next {
+	left: auto;
+	right: -33px;
+}
+
+.hero__slider.owl-carousel .owl-nav button:after {
+	position: absolute;
+	top: 6px;
+	left: 0;
+	right: 0;
+	height: 54px;
+	width: 54px;
+	background: rgba(255, 255, 255, 0.1);
+	content: "";
+	z-index: -1;
+	margin: 0 auto;
+}
+
+.hero__slider.owl-carousel .owl-nav button span {
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	display: block;
+	z-index: 1;
+}
+
+/*---------------------
+  Product
+-----------------------*/
+
+.product {
+	padding-bottom: 60px;
+	padding-top: 80px;
+}
+
+.product-page {
+	padding-top: 60px;
+}
+
+.btn__all {
+	text-align: right;
+	margin-bottom: 30px;
+}
+
+.trending__product {
+	margin-bottom: 50px;
+}
+
+.popular__product {
+	margin-bottom: 50px;
+}
+
+.recent__product {
+	margin-bottom: 50px;
+}
+
+.product__item {
+	margin-bottom: 30px;
+    transition: transform 0.3s ease; /* Плавный переход для увеличения и уменьшения */
+	position: relative;
+}
+
+/* Плавное увеличение иконки с сериями вместе с карточкой */
+.product__item:hover .ep {
+    transform: scale(1.05); /* Увеличение иконки вместе с карточкой */
+}
+
+.product__item__pic img {
+    width: 100%;
+    height: auto;
+}
+
+/* Иконка с количеством серий */
+.product__item .ep {
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    z-index: 1; /* Установите z-index ниже, чем у подсказки */
+    background-color: #800080;
+}
+
+.product__item__pic {
+    height: 300px; /* Вы можете настроить этот параметр в зависимости от желаемого размера */
+    width: auto;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+/* Плавное увеличение карточки при наведении */
+.product__item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    z-index: 10; /* Поднимем карточку выше остальных элементов */
+}
+
+/* Изменение цвета текста при наведении */
+.product__item__text h5 a:hover {
+    color: #ff5555; /* Меняем цвет текста на красный при наведении */
+    transition: color 0.3s ease; /* Плавный переход для цвета текста */
+}
+
+#anime-list {
+    transition: opacity 0.35s ease-in-out; /* Плавное изменение непрозрачности */
+}
+
+.fade-out {
+    opacity: 0; /* Исчезновение при переключении */
+}
+
+.fade-in {
+    opacity: 1; /* Появление нового содержимого */
+}
+
+.hidden {
+    opacity: 0;
+}
+.hero__items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero__items .blurred-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(1.2); /* Осветляем картинку в блюре */
+    z-index: 1;
+}
+
+.hero__items .clear-image {
+    position: relative;
+    z-index: 2;
+    max-height: 230%;
+	width: auto;
+    object-fit: contain;
+    transform: translate(-2%, -20%); /* Отступ сверху и слева */
+    filter: contrast(1.1) brightness(1) saturate(1.2);
+    z-index: 5;
+    border-radius: 50px;
+
+    /* Более мягкий градиент */
+    mask-image: linear-gradient(to right, transparent 10%, black 35%, black 65%, transparent 80%);
+    mask-mode: match-source;
+}
+
+.hero__text {
+    z-index: 3;
+    position: relative; /* Чтобы текст был над изображением */
+    padding-left: 0px; /* Увеличиваем отступ слева, чтобы текст был дальше от картинки */
+    padding-right: 20px; /* Добавляем небольшой отступ справа для симметрии */
+    margin-top: -200px; /* Можно уменьшить расстояние сверху, если текст слишком высоко */
+}
+
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.left-arrow button, .right-arrow button {
+    width: 50px; /* Ширина кнопки */
+    height: 50px; /* Высота кнопки, чтобы сделать ее круглой */
+    border-radius: 50%; /* Закругляем края до круга */
+    background-color: #E53637; /* Задаем нужный цвет фона */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none; /* Убираем границу */
+    cursor: pointer;
+}
+
+.left-arrow button:hover, .right-arrow button:hover {
+    background-color: #cc2f31; /* Изменение цвета при наведении */
+}
+
+.left-arrow button i, .right-arrow button i {
+    color: #ffffff; /* Цвет стрелки */
+    font-size: 20px; /* Размер иконки */
+}
+
+#prev-page {
+    display: none; /* Скрываем кнопку назад по умолчанию */
+}
+
+button {
+    background-color: #ff4444;
+    border: none;
+    width: auto;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+button:hover {
+    background-color: #ff2222;
+    cursor: pointer;
+}
+
+.product__item__pic .ep {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	padding: 2px 12px;
+	border-radius: 4px;
+	position: absolute;
+	top: 10px;
+    z-index: 5; /* Уменьшили z-index, чтобы подсказка отображалась выше */
+}
+
+.product__item__pic .comment {
+	font-size: 13px;
+	color: #ffffff;
+	background: #3d3d3d;
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 4px;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+}
+
+.product__item__pic .view {
+	font-size: 13px;
+	color: #ffffff;
+	background: #3d3d3d;
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 4px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+
+.product__item__text {
+	padding-top: 20px;
+}
+
+.product__item__text ul {
+	margin-bottom: 10px;
+}
+
+.product__item__text ul li {
+	list-style: none;
+	font-size: 10px;
+	color: #ffffff;
+	font-weight: 700;
+	padding: 1px 10px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 50px;
+	display: inline-block;
+}
+
+.product__item__text h5 a {
+	color: #ffffff;
+	font-weight: 700;
+	line-height: 26px;
+}
+
+.product__sidebar .section-title h5 {
+	color: #ffffff;
+	font-weight: 600;
+	font-family: "Oswald", sans-serif;
+	line-height: 21px;
+	text-transform: uppercase;
+	padding-left: 20px;
+	position: relative;
+}
+
+.product__sidebar .section-title h5:after {
+	position: absolute;
+	left: 0;
+	top: -6px;
+	height: 32px;
+	width: 4px;
+	background: #e53637;
+	content: "";
+}
+
+.product__sidebar__view {
+	position: relative;
+	margin-bottom: 80px;
+	margin: auto;
+    padding: auto;
+}
+
+.product__sidebar__view .filter__controls {
+	position: absolute;
+	right: 0;
+	top: -5px;
+}
+
+.product__sidebar__view .filter__controls li {
+	list-style: none;
+	font-size: 13px;
+	color: #b7b7b7;
+	display: inline-block;
+	margin-right: 7px;
+	cursor: pointer;
+}
+
+.product__sidebar__view .filter__controls li.active {
+	color: #ffffff;
+}
+
+.product__sidebar__view .filter__controls li:last-child {
+	margin-right: 0;
+}
+
+.product__sidebar__view__item {
+	height: 190px;
+	position: relative;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.product__sidebar__view__item .ep {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	padding: 2px 12px;
+	border-radius: 4px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+    z-index: 5; /* Убедитесь, что иконка размещена ниже, чем подсказка */
+}
+
+.product__sidebar__view__item .view {
+	font-size: 13px;
+	color: #ffffff;
+	background: #3d3d3d;
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 4px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.product__sidebar__view__item h5 {
+	position: absolute;
+	left: 0;
+	bottom: 25px;
+	width: 100%;
+	padding: 0 30px 0 20px;
+}
+
+.product__sidebar__view__item h5 a {
+	color: #ffffff;
+	font-weight: 700;
+	line-height: 26px;
+}
+
+.product__sidebar__comment {
+	margin-bottom: 35px;
+}
+
+.product__sidebar__comment__item {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.product__sidebar__comment__item__pic {
+	float: left;
+	margin-right: 15px;
+}
+
+.product__sidebar__comment__item__text {
+	overflow: hidden;
+}
+
+.product__sidebar__comment__item__text ul {
+	margin-bottom: 10px;
+}
+
+.product__sidebar__comment__item__text ul li {
+	list-style: none;
+	font-size: 10px;
+	color: #ffffff;
+	font-weight: 700;
+	padding: 1px 10px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 50px;
+	display: inline-block;
+}
+
+.product__sidebar__comment__item__text h5 {
+	margin-bottom: 10px;
+}
+
+.product__sidebar__comment__item__text h5 a {
+	color: #ffffff;
+	font-weight: 700;
+	line-height: 26px;
+}
+
+.product__sidebar__comment__item__text span {
+	display: block;
+	font-size: 13px;
+	color: #b7b7b7;
+}
+
+.product__page__title {
+	border-bottom: 2px solid #dc3545;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+.product__page__title .section-title {
+	margin-bottom: 0;
+}
+
+.product__page__title .product__page__filter {
+	text-align: right;
+}
+
+.product__page__title .product__page__filter p {
+	color: #ffffff;
+	display: inline-block;
+	margin-bottom: 0;
+	margin-right: 16px;
+}
+
+.product__page__title .product__page__filter .nice-select {
+	float: none;
+	display: inline-block;
+	font-size: 15px;
+	color: #3d3d3d;
+	font-weight: 700;
+	border-radius: 0;
+	padding-left: 15px;
+	padding-right: 40px;
+	height: 32px;
+	line-height: 32px;
+}
+
+.product__page__title .product__page__filter .nice-select:after {
+	border-bottom: 2px solid #111;
+	border-right: 2px solid #111;
+	height: 8px;
+	top: 47%;
+	width: 8px;
+	right: 15px;
+}
+
+.product__page__title .product__page__filter .nice-select .list {
+	margin-top: 0;
+	border-radius: 0;
+}
+
+.product__pagination {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет перенести элементы на следующую строку при нехватке места */
+    justify-content: center; /* Выравнивание номеров страниц по центру */
+    gap: 10px; /* Расстояние между элементами */
+    margin-top: 20px;
+}
+
+.product__pagination a {
+	display: inline-block;
+	font-size: 15px;
+	color: #b7b7b7;
+	font-weight: 600;
+	height: 50px;
+	width: 50px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	line-height: 48px;
+	text-align: center;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.product__pagination a:hover {
+	color: #ffffff;
+}
+
+.product__pagination a.current-page {
+	border: 1px solid #ffffff;
+}
+
+.product__pagination a i {
+	color: #b7b7b7;
+	font-size: 15px;
+}
+
+/*---------------------
+  Anime Details
+-----------------------*/
+
+.anime-details {
+	padding-top: 60px;
+}
+
+.anime__details__content {
+	margin-bottom: 65px;
+}
+
+.anime__details__text {
+	position: relative;
+}
+
+.anime__details__text p {
+	color: #ddd;
+	font-size: 1.1em; /* Увеличение основного текста */
+	line-height: 1.6;
+}
+
+.anime__details__rating .rating a {
+    font-size: 1.5em; /* Размер звезд */
+    color: #FFD700;  /* Цвет для заполненных звезд */
+}
+
+.anime__details__rating .rating a.fa-star-o {
+    color: #ccc;  /* Цвет для пустых звезд */
+}
+
+.anime__details__pic {
+	height: 440px;
+	border-radius: 5px;
+	position: relative;
+}
+
+.anime__details__pic .comment {
+	font-size: 13px;
+	color: #ffffff;
+	background: #3d3d3d;
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 4px;
+	position: absolute;
+	left: 10px;
+	bottom: 25px;
+}
+
+.anime__details__pic .view {
+	font-size: 13px;
+	color: #ffffff;
+	background: #3d3d3d;
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 4px;
+	position: absolute;
+	right: 10px;
+	bottom: 25px;
+}
+
+.anime__details__title {
+	margin-bottom: 20px;
+}
+
+.anime__details__title h3 {
+	color: #ffffff;
+	font-weight: bold;
+	margin-bottom: 13px;
+	font-size: 2.5em; /* Увеличение размера заголовка */
+}
+
+.anime__details__title span {
+	font-size: 1.2em; /* Увеличение подзаголовка */
+	color: #ccc;
+	display: block;
+}
+
+.anime__details__pic {
+    position: relative;
+    z-index: 1; /* Обеспечивает, что обложка не перекрывается звездами */
+}
+
+.anime__details__rating {
+    margin-top: 15px; /* Добавляем отступ сверху */
+    position: relative;
+    z-index: 0; /* Оставляем звезды ниже обложки */
+    text-align: center;
+}
+
+.anime__details__rating .rating i {
+	font-size: 24px;
+	color: #e89f12;
+	display: inline-block;
+}
+
+.anime__details__rating span {
+	display: block;
+	font-size: 18px;
+	color: #b7b7b7;
+}
+
+.anime__details__widget {
+	margin-bottom: 15px;
+}
+
+.anime__details__widget ul {
+    list-style: none;
+    padding: 0;
+	padding-left: 0;
+    margin: 0;
+}
+
+.anime__details__widget ul li span:first-child {
+    min-width: 150px; /* Ширина для левого столбца с названиями */
+    text-align: left;
+}
+
+.anime__details__widget ul li span:last-child {
+    text-align: right;
+    min-width: 50px; /* Минимальная ширина для выравнивания значений */
+}
+
+.anime__details__widget ul li {
+	list-style: none;
+	font-size: 15px;
+	color: #ffffff;
+	line-height: 1.6; /* Увеличивает расстояние между строками */
+	position: relative;
+	padding-left: 18px;
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.anime__details__widget ul li:before {
+	position: absolute;
+	left: 0;
+	top: 12px;
+	height: 6px;
+	width: 6px;
+	background: #b7b7b7;
+	content: "";
+}
+
+#kodik-player {
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 1024px) {
+    #kodik-player {
+        transform: scale(0.9) translateX(-5%); /* Масштабируем и сдвигаем плеер левее */
+        transform-origin: top left; /* Указываем начало масштабирования и сдвига от левого верхнего угла */
+        width: 122%; /* Ширина плеера — 80% экрана */
+        max-width: none; /* Убираем максимальную ширину */
+        margin-left: 0; /* Убираем автоматическое выравнивание по центру */
+    }
+}
+
+
+.anime__details__btn {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    margin-top: 10px; /* Расстояние сверху */
+}
+
+.line-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #FF6B6B, transparent);
+    margin: 20px 0;
+}
+
+
+.anime__details__widget ul li span {
+	color: #777777; /* более темный цвет для названий */
+	min-width: 100px; /* Минимальная ширина для span */
+	display: inline-block;
+	font-weight: 600;
+	text-align: right; /* выравниваем по правому краю */
+	margin-right: 5px; /* Отступ для выравнивания */
+	font-weight: bold; /* для выделения названий */
+}
+
+.anime__details__widget ul li span + span {
+    color: #ffffff; /* белый цвет для значений */
+    margin-left: 5px; /* немного увеличим отступ между названием и значением */
+}
+
+.anime__details__btn .follow-btn {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 20px;
+	border-radius: 4px;
+	margin-right: 11px;
+}
+
+.anime__details__btn .watch-btn span {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 20px;
+	border-radius: 4px 0 0 4px;
+	margin-right: 1px;
+}
+
+.anime__details__btn .watch-btn i {
+	font-size: 20px;
+	display: inline-block;
+	background: #e53637;
+	padding: 11px 5px 16px 8px;
+	color: #ffffff;
+	border-radius: 0 4px 4px 0;
+}
+
+.anime__details__review {
+	margin-bottom: 55px;
+}
+
+.anime__review__item {
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.anime__review__item__pic {
+	float: left;
+	margin-right: 20px;
+	position: relative;
+}
+
+.anime__review__item__pic:before {
+	position: absolute;
+	right: -30px;
+	top: 15px;
+	border-top: 15px solid transparent;
+	border-left: 15px solid #1d1e39;
+	content: "";
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.anime__review__item__pic img {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+.anime__review__item__text {
+	overflow: hidden;
+	background: #1d1e39;
+	padding: 18px 30px 16px 20px;
+	border-radius: 10px;
+}
+
+.anime__review__item__text h6 {
+	color: #ffffff;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.anime__review__item__text h6 span {
+	color: #b7b7b7;
+	font-weight: 400;
+}
+
+.anime__review__item__text p {
+	color: #b7b7b7;
+	line-height: 23px;
+	margin-bottom: 0;
+}
+
+.anime__details__form form textarea {
+	width: 100%;
+	font-size: 15px;
+	color: #b7b7b7;
+	padding-left: 20px;
+	padding-top: 12px;
+	height: 110px;
+	border: none;
+	border-radius: 5px;
+	resize: none;
+	margin-bottom: 24px;
+}
+
+.anime__details__form form button {
+	font-size: 11px;
+	color: #ffffff;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: #e53637;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 2px;
+}
+
+.anime__details__episodes {
+	margin-bottom: 35px;
+}
+
+.anime__details__episodes a {
+	display: inline-block;
+	font-size: 15px;
+	color: #ffffff;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 10px 20px;
+	border-radius: 4px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.anime__details__episodes a:hover {
+	color: #000000;
+	background: #ffffff;
+}
+
+/*---------------------
+  Breadcrumb
+-----------------------*/
+
+.breadcrumb-option {
+	padding-top: 35px;
+}
+
+.breadcrumb__links a {
+	font-size: 15px;
+	color: #ffffff;
+	margin-right: 18px;
+	display: inline-block;
+	position: relative;
+}
+
+.breadcrumb__links a i {
+	margin-right: 5px;
+	color: #e53637;
+}
+
+.breadcrumb__links a:after {
+	position: absolute;
+	right: -14px;
+	top: 0;
+	content: "";
+	font-family: "FontAwesome";
+}
+
+.breadcrumb__links span {
+	font-size: 15px;
+	color: #b7b7b7;
+	display: inline-block;
+}
+
+/*---------------------
+    Normal Breadcrumb
+-----------------------*/
+
+.normal-breadcrumb {
+	height: 300px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.normal__breadcrumb__text h2 {
+	color: #ffffff;
+	font-size: 48px;
+	font-family: "Oswald", sans-serif;
+	font-weight: 700;
+	margin-bottom: 22px;
+}
+
+.normal__breadcrumb__text p {
+	color: #ffffff;
+	font-size: 24px;
+	margin-bottom: 0;
+}
+
+/*---------------------
+  Login
+-----------------------*/
+
+.login {
+	padding-top: 130px;
+	padding-bottom: 120px;
+}
+
+.login__form {
+	position: relative;
+	padding-left: 145px;
+	align-items: center; /* Центрирование содержимого формы */
+}
+
+button.site-btn {
+    width: 100%; /* Кнопка будет занимать 100% ширины родительского контейнера */
+    max-width: 370px; /* Ограничим максимальную ширину кнопки */
+    text-align: center;
+    padding: 12px 30px;
+    margin-top: 10px;
+}
+
+.login__form:after {
+	position: absolute;
+	right: -14px;
+	top: -40px;
+	height: 330px;
+	width: 1px;
+	background: rgba(255, 255, 255, 0.2);
+	content: "";
+}
+
+.login__form h3 {
+	color: #ffffff;
+	font-weight: 700;
+	font-family: "Oswald", sans-serif;
+	margin-bottom: 30px;
+	text-align: center; /* Центрирование текста */
+}
+
+.login__form form .input__item {
+	position: relative;
+	width: 370px;
+	margin-bottom: 20px;
+}
+
+.login__form form .input__item:before {
+	position: absolute;
+	left: 50px;
+	top: 10px;
+	height: 30px;
+	width: 1px;
+	background: #b7b7b7;
+	content: "";
+}
+
+.login__form form .input__item input {
+	height: 50px;
+	width: 100%;
+	font-size: 15px;
+	color: #b7b7b7;
+	background: #ffffff;
+	border: none;
+	padding-left: 76px;
+}
+
+.login__form form .input__item input::-webkit-input-placeholder {
+	color: #b7b7b7;
+}
+
+.login__form form .input__item input::-moz-placeholder {
+	color: #b7b7b7;
+}
+
+.login__form form .input__item input:-ms-input-placeholder {
+	color: #b7b7b7;
+}
+
+.login__form form .input__item input::-ms-input-placeholder {
+	color: #b7b7b7;
+}
+
+.login__form form .input__item input::placeholder {
+	color: #b7b7b7;
+}
+
+.login__form form .input__item span {
+	color: #b7b7b7;
+	font-size: 20px;
+	position: absolute;
+	left: 15px;
+	top: 13px;
+}
+
+.login__form form button {
+	border-radius: 0;
+	margin-top: 10px;
+}
+
+.login__form .forget_pass {
+	font-size: 15px;
+	color: #ffffff;
+	display: inline-block;
+	position: absolute;
+	right: 60px;
+	bottom: 12px;
+}
+
+.login__register {
+	padding-left: 30px;
+	text-align: center; /* Центрирование текста */
+}
+
+.login__register h3 {
+	color: #ffffff;
+	font-weight: 700;
+	font-family: "Oswald", sans-serif;
+	margin-bottom: 30px;
+}
+
+.login__register .primary-btn {
+	background: #e53637;
+	padding: 12px 42px;
+}
+
+.login__social {
+	padding-top: 52px;
+}
+
+.login__social__links {
+	text-align: center;
+}
+
+.login__social__links span {
+	color: #ffffff;
+	display: block;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+
+.login__social__links ul li {
+	list-style: none;
+	margin-bottom: 15px;
+}
+
+.login__social__links ul li:last-child {
+	margin-bottom: 0;
+}
+
+.login__social__links ul li a {
+	color: #ffffff;
+	display: block;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	width: 460px;
+	padding: 14px 0;
+	position: relative;
+	margin: 0 auto;
+}
+
+.login__social__links ul li a.facebook {
+	background: #4267b2;
+}
+
+.login__social__links ul li a.google {
+	background: #ff4343;
+}
+
+.login__social__links ul li a.twitter {
+	background: #1da1f2;
+}
+
+.login__social__links ul li a i {
+	font-size: 20px;
+	position: absolute;
+	left: 32px;
+	top: 14px;
+}
+
+/*---------------------
+  Footer
+-----------------------*/
+
+.footer {
+    display: flex;
+    justify-content: center; /* Центрируем элементы */
+    align-items: center;
+    background: #070720;
+    padding: 40px 0 20px;
+    position: relative;
+    border-top: 2px solid #dc3545;
+}
+
+.page-up {
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    margin-left: -25px;
+}
+
+.page-up a {
+    display: inline-block;
+    font-size: 36px;
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    background: #e53637;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__nav a {
+    font-size: 15px;
+    color: #b7b7b7;
+    margin-right: 20px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer__nav a:last-child {
+    margin-right: 0;
+}
+
+.footer__copyright__text {
+    color: #b7b7b7;
+    text-align: right;
+}
+
+.page-up a:hover {
+    background: #dc3545; /* Изменение цвета при наведении */
+}
+
+.footer__nav a:hover {
+    color: #ffffff; /* Изменение цвета при наведении */
+}
+
+/*--------------------------------- Responsive Media Quaries -----------------------------*/
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
+    .hero {
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+
+/* Medium Device = 1200px */
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .hero {
+        overflow: hidden;
+    }
+    .login__form {
+        padding-left: 32px;
+    }
+    .login__social__links ul li a {
+        width: 380px;
+    }
+}
+
+/* Tablet Device = 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .hero {
+        overflow: hidden;
+    }
+    .header {
+        position: relative;
+    }
+    .header .container {
+        position: relative;
+    }
+    .header__right {
+        position: absolute;
+        right: 120px;
+        top: -42px;
+        padding: 0;
+    }
+    .header__menu {
+        display: none;
+    }
+    .slicknav_menu {
+        display: block;
+		background: #070720;
+        padding: 0;
+    }
+    .product__sidebar {
+        padding-top: 50px;
+    }
+    .footer__logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .footer__nav {
+        margin-bottom: 15px;
+    }
+    .footer__copyright__text {
+        text-align: center;
+    }
+    .login__form {
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* Wide Mobile = 480px */
+
+@media only screen and (max-width: 767px) {
+    .hero {
+        overflow: hidden;
+    }
+    .header {
+        position: relative;
+    }
+    .header .container {
+        position: relative;
+    }
+    .header__right {
+        position: absolute;
+        right: 120px;
+        top: -42px;
+        padding: 0;
+    }
+    .header__menu {
+        display: none;
+    }
+    .slicknav_menu {
+        display: block;
+		background: #070720;
+        padding: 0;
+    }
+    .product__sidebar {
+        padding-top: 50px;
+    }
+    .footer__logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .footer__nav {
+        margin-bottom: 15px;
+    }
+    .footer__copyright__text {
+        text-align: center;
+    }
+    .login__form {
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+    .col-lg-2_4, .col-md-4, .col-sm-6 {
+        flex: 0 0 50%; /* Устанавливаем ширину на 50% для двух элементов в ряду */
+        max-width: 50%;
+    }
+    
+    .product__item {
+        margin-bottom: 30px; /* Добавляем отступы между карточками */
+    }
+
+    .anime-list-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Small Device = 320px */
+
+@media only screen and (max-width: 479px) {
+    .hero__slider.owl-carousel .owl-nav {
+        display: none;
+    }
+    .hero__items {
+        padding: 250px 0 42px 15px;
+    }
+    .hero__text h2 {
+        font-size: 32px;
+    }
+    .footer__nav ul li {
+        margin-right: 10px;
+    }
+    .anime__details__btn .follow-btn {
+        padding: 14px 26px;
+        margin-right: 11px;
+        margin-bottom: 25px;
+    }
+    .login__form .forget_pass {
+        margin-top: 25px;
+    }
+    .header__right a {
+        margin-right: 10px;
+    }
+}
+
+
+/*----------------------------------------*/
+/* Профиль
+/*----------------------------------------*/
+
+.product__item__pic {
+    position: relative;
+}
+
+/* Ширина карточки для отображения большего количества текста */
+.anime-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Плавное появление и исчезновение */
+    position: absolute;
+    top: 50%;
+    left: -350px; /* Сдвигаем немного левее для большей ширины */
+    transform: translateY(-50%);
+    width: 350px; /* Увеличенная ширина */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9); /* Белый фон с прозрачностью 90% */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100 !important;
+    pointer-events: none;
+}
+
+/* Добавляем логику показа через JS */
+.anime-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product__item:hover .anime-tooltip {
+    opacity: 1;
+    visibility: visible; /* Подсказка видима, только когда её надо показать */
+}
+
+.anime-tooltip h4 {
+    margin: 0 0 10px;
+    font-size: 18px; /* Немного увеличим заголовок */
+    font-weight: bold;
+}
+
+.anime-tooltip p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.anime-tooltip ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.anime-tooltip ul li {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Плавное появление */
+.product__item__pic:hover .anime-tooltip {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Плавное увеличение карточки при наведении */
+.product__item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.rating-badge {
+    font-size: 13px;
+    color: #000000;
+    background: #ffc107; /* Желтый цвет фона */
+    display: inline-block;
+    padding: 2px 12px; /* Как и у плашки с сериями */
+    border-radius: 4px;
+    position: absolute;
+    top: 40px; /* Размещаем под плашкой серий */
+    left: 0px; /* Совпадает с плашкой серий */
+    z-index: 5; /* Уменьшили z-index, чтобы подсказка отображалась выше */
+    font-weight: bold;
+}
+
+.rating-badge i.fa-star {
+    margin-right: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .col-lg-3, .col-md-4, .col-sm-6 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+    .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

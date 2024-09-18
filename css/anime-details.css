@@ -1,0 +1,373 @@
+.comment-section, .comments-list {
+    margin-top: 30px;
+}
+
+.comment {
+    position: relative; /* Относительное позиционирование для размещения крестика внутри */
+    display: flex;
+    align-items: flex-start;
+    background-color: #333; /* Темный фон комментария */
+    color: #fff; /* Светлый текст */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    max-width: 1000px; /* Максимальная ширина для адаптивности */
+    word-break: break-word; /* Принудительный перенос длинных слов */
+    overflow-wrap: break-word; /* Современные браузеры */
+    width: fit-content;
+    min-width: 350px; /* Минимальная ширина */
+}
+
+
+.comment-body p {
+    margin: 0;
+    white-space: pre-wrap; /* Обработка пробелов и переносов строк */
+    word-break: break-word; /* Принудительный перенос длинных слов */
+    overflow-wrap: break-word; /* Современные браузеры */
+}
+
+.comment-block {
+    min-width: 500px; /* Минимальная ширина */
+    max-width: 100%; /* Максимальная ширина для адаптивности */
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #333; /* Цвет фона */
+    word-wrap: break-word; /* Перенос длинных слов */
+    overflow-wrap: break-word; /* Перенос длинных строк в современных браузерах */
+}
+
+.comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 1px solid #444;
+    resize: none;
+}
+
+.comment-section button {
+    background-color: #e53637;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+}
+
+.comments-list .comment {
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #2c2c2c;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.comments-list .comment-avatar {
+    flex-shrink: 0; /* Запрещает сжимать блок аватарки */
+    width: 50px; /* Фиксированная ширина */
+    height: 50px; /* Фиксированная высота */
+}
+
+.comments-list .comment-avatar img {
+    width: 100%; /* Чтобы изображение занимало всю ширину контейнера */
+    height: 100%; /* Чтобы изображение занимало всю высоту контейнера */
+    border-radius: 50%; /* Делаем изображение круглым */
+    object-fit: cover; /* Обрезаем изображение, чтобы оно не деформировалось */
+}
+
+.comments-list .comment-content {
+    flex-grow: 1;
+    margin-left: 10px; /* Сдвигаем текст правее, чтобы он не заходил на аватарку */
+    padding: 5px; /* Дополнительные отступы для текстового блока */
+}
+
+
+.comments-list .comment-content strong {
+    display: block;
+    font-weight: bold;
+}
+
+.comments-list .comment-content p {
+    word-wrap: break-word; /* Перенос длинных слов */
+    overflow-wrap: break-word; /* Современные браузеры */
+    white-space: pre-wrap; /* Обработка пробелов */
+    color: #fff;
+}
+.comments-list .comment-content span {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Стиль для заголовков "Оставить комментарий" и "Комментарии" */
+h3, .no-comments-message {
+    color: #fff; /* Светлый текст для заголовков */
+    font-size: 24px;
+    margin-bottom: 20px; /* Устанавливаем отступ снизу для заголовка */
+}
+
+/* Стиль для ссылки "войдите" */
+h3 a {
+    color: #3498db; /* Светлый синий цвет для ссылки */
+    text-decoration: underline; /* Подчеркивание для ссылки */
+}
+
+/* Стиль для сообщения о пустых комментариях */
+.no-comments-message {
+    color: #e0e0e0; /* Светло-серый текст для сообщения о пустых комментариях */
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Стиль для всех элементов <p> на странице */
+p {
+    color: #e0e0e0; /* Светло-серый цвет текста */
+    font-size: 16px; /* Размер шрифта */
+}
+
+/* Дополнительно для ссылок внутри абзацев */
+p a {
+    color: #3498db; /* Цвет ссылок в абзацах */
+    text-decoration: underline; /* Подчеркивание для ссылок */
+}
+/* Отступ для блока с комментариями */
+.comment-block {
+    min-width: 500px; /* Здесь можно задать желаемую минимальную ширину */
+    max-width: 100%; /* Максимальная ширина для адаптивности */
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #333; /* Цвет фона для примера */
+}
+.comment-content a {
+    color: #3498db; /* Цвет ссылки */
+    text-decoration: underline; /* Подчеркивание */
+}
+
+.comment-content a:hover {
+    color: #e53637; /* Изменение цвета при наведении */
+}
+
+.delete-comment-btn {
+    position: absolute; /* Абсолютное позиционирование */
+    top: -10px; /* Отступ от верхнего края */
+    right: 10px; /* Отступ от правого края */
+    background-color: transparent; /* Прозрачный фон */
+    border: none; /* Убираем границы */
+    color: #e74c3c; /* Красный цвет */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    outline: none;
+}
+
+.delete-comment-btn:hover,
+.delete-comment-btn:active,
+.delete-comment-btn:focus {
+    color: #e74c3c;
+    outline: none;
+    box-shadow: none;
+    background: none;
+}
+/* Контейнер для всех кнопок */
+.status-btns {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Уменьшенное расстояние между кнопками */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Общие стили для всех кнопок */
+.status-btn, .favorite-btn {
+    width: 50px; /* Уменьшенная ширина кнопок */
+    height: 50px; /* Уменьшенная высота кнопок */
+    background-color: #1C1C3A !important;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px; /* Немного уменьшенный размер иконки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    border: 0.5px solid #ff5252; /* Красная рамка по умолчанию */
+}
+
+/* Стили для иконок */
+.status-btn i, .favorite-btn i {
+    color: white; /* По умолчанию белый цвет */
+    transition: color 0.3s;
+}
+
+/* Ховер эффект для закрашивания только иконки */
+.status-btn:hover i, .favorite-btn:hover i {
+    color: #FF6B6B; /* Закрашиваем только иконку при наведении */
+}
+
+/* Закрашивание иконки для активной кнопки "В избранное" */
+.favorite-btn.favorite-active i {
+    color: #6bff81;
+}
+
+/* Закрашивание иконки и изменение рамки для активной кнопки статуса */
+.status-active i {
+    color: #6bff81; /* Зеленый цвет для активного статуса */
+}
+
+/* Изменение рамки для активной кнопки */
+.status-active, .favorite-btn.favorite-active {
+    border-color: #6bff81; /* Зеленая рамка для активной кнопки */
+}
+
+/* Выравнивание контейнеров для кнопок */
+#status-form, #favorite-form {
+    display: inline-flex;
+    gap: 5px; /* Уменьшенное расстояние между кнопками */
+}
+
+.related-anime-section {
+    margin-top: 20px;
+}
+
+.related-anime-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.related-anime-list ul li {
+    margin-bottom: 10px;
+}
+
+.related-anime-list ul li a {
+    color: #FF6B6B;
+    text-decoration: none;
+}
+
+.related-anime-list ul li a:hover {
+    text-decoration: underline;
+}
+
+.related-anime-grid {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden; /* Прячем контент до показа */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px; /* Уменьшили расстояние между элементами */
+    transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
+}
+
+.related-anime-item {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.related-anime-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.related-anime-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавили плавное изменение масштаба и тени */
+}
+
+/* Анимация при наведении */
+.related-anime-item:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.related-anime-item:hover .related-anime-cover {
+    transform: scale(1.1); /* Увеличение при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Добавили тень при наведении */
+}
+
+.related-anime-title {
+    margin-top: 8px; /* Уменьшили отступ сверху */
+    font-size: 12px; /* Уменьшили шрифт */
+    font-weight: 600; /* Добавили жирность шрифта */
+    color: #f8f8f8; /* Цвет текста */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Плавное изменение цвета и размера шрифта */
+}
+
+.related-anime-item:hover .related-anime-title {
+    color: #FF6B6B; /* Изменение цвета текста при наведении */
+}
+
+.btn-danger {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-danger:hover {
+    background-color: #e60000;
+}
+
+/* Начальные стили для заголовка */
+.related-anime-section h3 {
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer; /* Указатель в виде руки для заголовка */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Стили при наведении на заголовок */
+.related-anime-section h3:hover {
+    color: #ff6b6b; /* Цвет заголовка при наведении */
+}
+
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 1024px) {
+    .anime__details__rating .rating a {
+    font-size: 1.2em; /* Уменьшаем размер звезд */
+    color: #FFD700;  /* Цвет для заполненных звезд */
+    }
+
+    .anime__details__rating .rating a.fa-star-o {
+        color: #ccc;  /* Цвет для пустых звезд */
+    }
+
+    .anime__details__rating {
+        margin-top: 15px; /* Оставляем отступ без изменений */
+        position: relative;
+        z-index: 0; /* Оставляем звезды ниже обложки */
+        text-align: center;
+    }
+
+    .anime__details__rating .rating i {
+        font-size: 20px; /* Уменьшаем размер звезд чуть больше */
+        color: #e89f12;
+        display: inline-block;
+    }
+
+    .anime__details__rating span {
+        font-size: 16px; /* Уменьшаем размер текста */
+        color: #b7b7b7;
+    }
+
+}
